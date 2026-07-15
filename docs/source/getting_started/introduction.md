@@ -117,6 +117,6 @@ Kaiwu-PyTorch-Plugin（KPP）是一个 PyTorch 插件，用于在相干光量子
      title = {Quantum-Boosted High-Fidelity Deep Learning},
      author = {{QBoson Research Team}},
      year = {2025},
-     url = {https://arxiv.org/pdf/2508.11190}
+     url = {https://arxiv.org/abs/2508.11190}
  }
 ```

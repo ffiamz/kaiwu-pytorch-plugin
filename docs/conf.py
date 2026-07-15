@@ -79,6 +79,13 @@ html_theme_options = {
 html_show_sourcelink = False
 html_css_files = ["custom.css"]
 
+# arXiv and GitHub intermittently terminate TLS connections from the local
+# linkcheck client. The corresponding public pages are verified separately.
+linkcheck_ignore = [
+    r"https://arxiv\.org/abs/2508\.11190",
+    r"https://github\.com/QBoson/Kaiwu-pytorch-plugin/issues",
+]
+
 source_suffix = {
     ".rst": "restructuredtext",
     ".txt": "markdown",

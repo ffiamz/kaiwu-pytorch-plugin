@@ -218,7 +218,7 @@ Based on this representation, we successfully integrated millions of single-cell
 
 If you are interested in this work, please check out our paper:
 
-[Quantum-Boosted High-Fidelity Deep Learning](https://arxiv.org/pdf/2508.11190)
+[Quantum-Boosted High-Fidelity Deep Learning](https://arxiv.org/abs/2508.11190)
 
 ```{image} https://github.com/user-attachments/assets/bc6097b3-6da8-4154-8aad-f749b4549fe1
 :alt: QBM-VAE Performance Comparison

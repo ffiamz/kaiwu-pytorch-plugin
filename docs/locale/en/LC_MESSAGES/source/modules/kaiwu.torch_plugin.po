@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-10 18:58+0800\n"
+"POT-Creation-Date: 2026-07-15 13:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,7 @@ msgstr ""
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.gibbs_sample:3
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.hidden_bias:3
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.visible_bias:3
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:13
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:3
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:3
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.generate:3
@@ -62,8 +63,8 @@ msgstr ""
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:3
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.step:3
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.to:3 kaiwu.torch_plugin.qvae.QVAE:3
-#: kaiwu.torch_plugin.qvae.QVAE.forward:3
-#: kaiwu.torch_plugin.qvae.QVAE.neg_elbo:3
+#: kaiwu.torch_plugin.qvae.QVAE.bm_loss:3
+#: kaiwu.torch_plugin.qvae.QVAE.forward:3 kaiwu.torch_plugin.qvae.QVAE.loss:3
 #: kaiwu.torch_plugin.qvae.QVAE.posterior:3
 #: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine:3
 #: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine.clip_parameters:3
@@ -77,14 +78,12 @@ msgstr ""
 msgid "num_nodes (int): Total number of nodes in the model."
 msgstr ""
 
-#: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine:6
-#: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine:8
-#: of
-msgid "quadratic_coef (torch.FloatTensor, optional): quadratic coefficent,"
+#: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine:6 of
+msgid "quadratic_coef (torch.FloatTensor, optional): Quadratic coefficient"
 msgstr ""
 
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine:7 of
-msgid "shape is [num_nodes, num_nodes]"
+msgid "with shape ``[num_nodes, num_nodes]``."
 msgstr ""
 
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine:9 of
@@ -94,9 +93,11 @@ msgid ""
 msgstr ""
 
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine:11 of
-msgid ""
-"device (torch.device, optional): Device for tensor construction. If "
-"``None``, uses CPU."
+msgid "device (torch.device, optional): Device for tensor construction; uses"
+msgstr ""
+
+#: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine:12 of
+msgid "CPU when ``None``."
 msgstr ""
 
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.clip_parameters:1
@@ -137,18 +138,18 @@ msgstr ""
 #: kaiwu.torch_plugin.dbn.UnsupervisedDBN.transform:6
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.condition_sample:7
 #: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.forward:7
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:8
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:8
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:10
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:7
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.generate:10
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.get_non_special_symbol_mask:8
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.get_non_special_symbol_mask:7
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.initialize_state:9
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.objective:7
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:8
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:7
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.step:7
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.to:7
-#: kaiwu.torch_plugin.qvae.QVAE.forward:6
-#: kaiwu.torch_plugin.qvae.QVAE.neg_elbo:8
-#: kaiwu.torch_plugin.qvae.QVAE.posterior:8
+#: kaiwu.torch_plugin.qvae.QVAE.bm_loss:9
+#: kaiwu.torch_plugin.qvae.QVAE.forward:7 kaiwu.torch_plugin.qvae.QVAE.loss:10
+#: kaiwu.torch_plugin.qvae.QVAE.posterior:7
 #: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine.forward:7
 #: of
 msgid "Returns:"
@@ -232,7 +233,7 @@ msgstr ""
 
 #: kaiwu.torch_plugin.dbn.UnsupervisedDBN:1
 #: kaiwu.torch_plugin.qdiffusion.EnergyModel:1
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion:1 kaiwu.torch_plugin.qvae.QVAE:1 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:1 of
 msgid "基类：:py:class:`~torch.nn.modules.module.Module`"
 msgstr ""
 
@@ -265,26 +266,56 @@ msgid "Scores visible logits under the conditioned BM energy model."
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion:1 of
-msgid "Energy-guided discrete diffusion wrapper over generic sequence backbones."
+msgid ""
+"Energy-guided discrete diffusion wrapper over generic sequence backbones."
+" Initializes a QDiffusion model."
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion:3 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:4 of
 msgid "The class combines two backbone roles:"
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion:5 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:6 of
 msgid "a proposal model that predicts token logits for the current noisy state"
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion:6 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:7 of
 msgid "an energy model that reranks candidate reconstructions"
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion:8 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:9 of
 msgid ""
-"It exposes both training-oriented APIs such as :meth:`objective` and "
-"decoding-oriented APIs such as :meth:`initialize_state`, :meth:`step`, "
-"and :meth:`generate`."
+"It exposes both training-oriented APIs such as ``objective`` and "
+"decoding-oriented APIs such as ``initialize_state``, ``step``, and "
+"``generate``."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:14 of
+msgid "proposal_model: Backbone used to predict proposal logits."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:16 of
+msgid "energy_model: Energy-side model used to encode and score candidates."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:18 of
+msgid "token_spec: Special-token metadata required by the generator."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:20 of
+msgid "config: Optional generation/training configuration."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:22 of
+msgid "dtype: Floating point dtype tracked by the wrapper."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:24 of
+msgid "device: Optional target device. When omitted, infer from parameters."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion:26 of
+msgid "freeze_proposal: Whether to freeze proposal model parameters."
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:1 of
@@ -292,13 +323,18 @@ msgid "Scores candidate reconstructions conditioned on the noisy state."
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:4 of
-msgid ""
-"noisy_tokens: Noisy token tensor used as conditioning input. "
-"candidate_tokens: Candidate clean token tensor to score. attention_mask: "
-"Optional attention mask for the energy model."
+msgid "noisy_tokens: Noisy token tensor used as conditioning input."
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:9 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:6 of
+msgid "candidate_tokens: Candidate clean token tensor to score."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:8 of
+msgid "attention_mask: Optional attention mask for the energy model."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.energy:11 of
 msgid "torch.Tensor: A tensor of scalar energies with shape ``[batch, 1]``."
 msgstr ""
 
@@ -309,27 +345,23 @@ msgstr ""
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:4
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:4 of
 msgid ""
-"noisy_tokens: Current noisy token tensor. **kwargs: Additional keyword "
-"arguments forwarded to the proposal"
+"noisy_tokens: Current noisy token tensor. ``**kwargs``: Additional "
+"keyword arguments forwarded to the proposal model."
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:6
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:6 of
-msgid "model."
-msgstr ""
-
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:9
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:9 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:8
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:8 of
 msgid "torch.Tensor: Proposal logits over the token vocabulary."
 msgstr ""
 
 #: kaiwu.torch_plugin.dbn.UnsupervisedDBN.forward:9
 #: kaiwu.torch_plugin.dbn.UnsupervisedDBN.reconstruct:12
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:11 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:10
+#: kaiwu.torch_plugin.qvae.QVAE.loss:13 of
 msgid "Raises:"
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:12 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.forward:11 of
 msgid "TypeError: If the proposal model does not implement ``forward``."
 msgstr ""
 
@@ -358,14 +390,10 @@ msgstr ""
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.get_non_special_symbol_mask:4 of
 msgid ""
 "output_tokens: Token tensor to inspect. partial_masks: Optional boolean "
-"mask of positions that should remain"
+"mask of positions that should remain fixed."
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.get_non_special_symbol_mask:6 of
-msgid "fixed."
-msgstr ""
-
-#: kaiwu.torch_plugin.qdiffusion.QDiffusion.get_non_special_symbol_mask:9 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusion.get_non_special_symbol_mask:8 of
 msgid ""
 "torch.Tensor: A boolean mask where ``True`` marks editable non-special "
 "positions."
@@ -384,8 +412,8 @@ msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.initialize_state:10 of
 msgid ""
-"dict[str, Any]: A mutable state dictionary suitable for repeated "
-":meth:`step` calls."
+"dict[str, Any]: A mutable state dictionary suitable for repeated ``step``"
+" calls."
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.objective:1 of
@@ -405,7 +433,7 @@ msgid ""
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.proposal:1 of
-msgid "Semantic alias around :meth:`forward` for proposal-side calls."
+msgid "Semantic alias around ``forward`` for proposal-side calls."
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.step:1 of
@@ -414,7 +442,7 @@ msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.step:4 of
 msgid ""
-"state: Current decode state created by :meth:`initialize_state`. "
+"state: Current decode state created by ``initialize_state``. "
 "partial_masks: Optional boolean mask of fixed positions."
 msgstr ""
 
@@ -428,8 +456,8 @@ msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.to:4 of
 msgid ""
-"*args: Positional arguments forwarded to ``nn.Module.to``. **kwargs: "
-"Keyword arguments forwarded to ``nn.Module.to``."
+"``*args``: Positional arguments forwarded to ``nn.Module.to``. "
+"``**kwargs``: Keyword arguments forwarded to ``nn.Module.to``."
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusion.to:8 of
@@ -448,120 +476,160 @@ msgstr ""
 msgid "Attributes:"
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:4 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:5 of
 msgid "num_diffusion_timesteps: Number of discrete noising steps used by the"
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:5 of
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:6 of
 msgid "training objective."
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:6 of
-msgid ""
-"use_coupled_sampling: Whether to use the coupled corruption variant. "
-"num_candidates: Number of proposal candidates sampled at each decode "
-"step. proposal_temperature: Temperature used for proposal-side sampling. "
-"proposal_noise_scale: Gumbel noise scale used during proposal sampling. "
-"energy_temperature: Temperature used when converting energies into"
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:8 of
+msgid "use_coupled_sampling: Whether to use the coupled corruption variant."
 msgstr ""
 
-#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:11 of
-msgid "reranking weights."
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:10 of
+msgid "num_candidates: Number of proposal candidates sampled at each decode step."
 msgstr ""
 
 #: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:12 of
-msgid ""
-"disable_resample: Whether to disable repetition-collapse resampling. "
-"resample_ratio: Frequency threshold that triggers resampling. "
-"resample_top_p: Top-p cutoff used during resampling. decoding_strategy: "
-"Skeptical-remasking strategy string."
+msgid "proposal_temperature: Temperature used for proposal-side sampling."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:14 of
+msgid "proposal_noise_scale: Gumbel noise scale used during proposal sampling."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:16 of
+msgid "energy_temperature: Temperature used when converting energies into"
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:17 of
+msgid "reranking weights."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:19 of
+msgid "disable_resample: Whether to disable repetition-collapse resampling."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:21 of
+msgid "resample_ratio: Frequency threshold that triggers resampling."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:23 of
+msgid "resample_top_p: Top-p cutoff used during resampling."
+msgstr ""
+
+#: kaiwu.torch_plugin.qdiffusion.QDiffusionConfig:25 of
+msgid "decoding_strategy: Skeptical-remasking strategy string."
 msgstr ""
 
 #: kaiwu.torch_plugin.qvae.QVAE:1 of
-msgid "Quantum Variational Autoencoder (QVAE) Model"
+msgid "基类：:py:class:`~kaiwu.torch_plugin.qvae.AutoEncoderBase`"
+msgstr ""
+
+#: kaiwu.torch_plugin.qvae.QVAE:1 of
+msgid "Quantum Variational Autoencoder integrated into AutoEncoderBase framework."
 msgstr ""
 
 #: kaiwu.torch_plugin.qvae.QVAE:4 of
-msgid "encoder: Encoder module"
+msgid ""
+"input_dimension (int or list of int): Dimensionality of input features. "
+"activation_fct (callable, optional): Activation function for hidden "
+"layers. config (object): Configuration object containing "
+"``num_latent_units``, ``loss_type``, ``dist_beta``, ``kl_beta``, and "
+"``weight_decay``. sampler_type (str): Type of sampler for BM ('sa' or "
+"'cim'). n_batches (int): Number of batches for conditional decoding (0 = "
+"no conditioning). bm (object, optional): Pre-created Boltzmann Machine. "
+"encoder (object, optional): Pre-created encoder. decoder (object, "
+"optional): Pre-created decoder. sampler (object, optional): Pre-created "
+"sampler. ``**kwargs``: Additional keyword arguments for AutoEncoderBase."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE:6 of
-msgid "decoder: Decoder module"
+#: kaiwu.torch_plugin.qvae.QVAE.bm_loss:1 of
+msgid "Compute BM loss for updating BM parameters separately."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE:8 of
-msgid "bm (AbstractBoltzmannMachine): Boltzmann machine"
+#: kaiwu.torch_plugin.qvae.QVAE.bm_loss:4 of
+msgid "q (torch.Tensor): Encoder output logits (batch_size, latent_dim)."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE:10 of
-msgid "sampler: Sampler"
+#: kaiwu.torch_plugin.qvae.QVAE.bm_loss:5 of
+msgid "Must be detached to prevent gradients flowing to encoder."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE:12 of
-msgid "dist_beta: Beta parameter for the distribution"
+#: kaiwu.torch_plugin.qvae.QVAE.bm_loss:7 of
+msgid ""
+"bm_weight_decay (float, optional): L2 regularization coefficient for BM "
+"parameters."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE:14 of
-msgid "mean_x (torch.Tensor): Bias of training data"
+#: kaiwu.torch_plugin.qvae.QVAE.bm_loss:10 of
+msgid "torch.Tensor: BM loss scalar."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE:16 of
-msgid "num_vis (int): Number of visible variables in the Boltzmann machine"
+#: kaiwu.torch_plugin.qvae.QVAE.create_networks:1 of
+msgid "Create encoder, decoder, BM and sampler. Subclasses must override."
+msgstr ""
+
+#: kaiwu.torch_plugin.qvae.QVAE.energy:1 of
+msgid "计算 BM 能量（用于评估）"
 msgstr ""
 
 #: kaiwu.torch_plugin.qvae.QVAE.forward:1 of
-msgid "Forward propagation"
+msgid "Forward pass through the QVAE."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE.forward:4
-#: kaiwu.torch_plugin.qvae.QVAE.neg_elbo:4 of
-msgid "x (torch.Tensor): Input data"
-msgstr ""
-
-#: kaiwu.torch_plugin.qvae.QVAE.forward:7 of
-msgid "tuple: (recon_x, posterior, q, zeta)"
+#: kaiwu.torch_plugin.qvae.QVAE.forward:4 of
+msgid ""
+"x (torch.Tensor): Input tensor of shape (batch_size, input_dim). "
+"batch_idx (torch.Tensor, optional): Batch indices for conditional "
+"decoding when ``n_batches > 0``."
 msgstr ""
 
 #: kaiwu.torch_plugin.qvae.QVAE.forward:8 of
 msgid ""
-"recon_x: Reconstructed data posterior: Posterior distribution object q: "
-"Encoder output zeta: Posterior sample"
+"tuple: Reconstructed logits, posterior distribution, encoder logits, and "
+"reparameterized latent sample."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE.neg_elbo:1 of
-msgid "Compute negative ELBO loss"
+#: kaiwu.torch_plugin.qvae.QVAE.loss:1 of
+msgid "Compute total loss (reconstruction + KL + weight decay)."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE.neg_elbo:6 of
-msgid "kl_beta (float): Weight coefficient for KL term"
-msgstr ""
-
-#: kaiwu.torch_plugin.qvae.QVAE.neg_elbo:9 of
-msgid "tuple: (output, recon_x, neg_elbo, wd_loss, total_kl, cost, q, zeta)"
-msgstr ""
-
-#: kaiwu.torch_plugin.qvae.QVAE.neg_elbo:10 of
+#: kaiwu.torch_plugin.qvae.QVAE.loss:4 of
 msgid ""
-"output: Reconstructed output (sigmoid activated) recon_x: Reconstructed "
-"data neg_elbo: Negative ELBO loss wd_loss: Weight decay loss total_kl: KL"
-" divergence cost: Reconstruction loss q: Encoder output zeta: Posterior "
-"sample"
+"x (torch.Tensor): Input tensor (batch_size, input_dim). recon_x "
+"(torch.Tensor): Reconstructed logits (batch_size, input_dim). posterior "
+"(MixtureGeneric): Posterior distribution object. q (torch.Tensor): "
+"Encoder logits (batch_size, latent_dim). zeta (torch.Tensor): Latent "
+"sample (batch_size, latent_dim)."
+msgstr ""
+
+#: kaiwu.torch_plugin.qvae.QVAE.loss:11 of
+msgid "torch.Tensor: Total loss scalar."
+msgstr ""
+
+#: kaiwu.torch_plugin.qvae.QVAE.loss:14 of
+msgid "ValueError: If loss_type is not supported."
 msgstr ""
 
 #: kaiwu.torch_plugin.qvae.QVAE.posterior:1 of
-msgid "Compute posterior distribution and its reparameterized sample"
+msgid "Compute posterior distribution and reparameterized sample."
 msgstr ""
 
 #: kaiwu.torch_plugin.qvae.QVAE.posterior:4 of
-msgid "q_logits (torch.Tensor): Encoder output, log-odds"
+msgid ""
+"q_logits (torch.Tensor): Encoder output logits (batch_size, latent_dim). "
+"beta (float): Mixture parameter for MixtureGeneric."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE.posterior:6 of
-msgid "beta: Beta parameter for the distribution"
+#: kaiwu.torch_plugin.qvae.QVAE.posterior:8 of
+msgid "tuple: Posterior distribution and reparameterized latent sample."
 msgstr ""
 
-#: kaiwu.torch_plugin.qvae.QVAE.posterior:9 of
-msgid "tuple: (Posterior distribution object, Sampled result zeta)"
+#: kaiwu.torch_plugin.qvae.QVAE.set_train_bias:1 of
+msgid "Compute train bias from dataset mean for Bernoulli reconstruction."
 msgstr ""
 
 #: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine:1
@@ -577,6 +645,11 @@ msgstr ""
 #: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine:6
 #: of
 msgid "num_hidden (int): Number of hidden nodes in the model."
+msgstr ""
+
+#: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine:8
+#: of
+msgid "quadratic_coef (torch.FloatTensor, optional): quadratic coefficent,"
 msgstr ""
 
 #: kaiwu.torch_plugin.restricted_boltzmann_machine.RestrictedBoltzmannMachine:9
@@ -794,4 +867,389 @@ msgstr ""
 #: kaiwu.torch_plugin.usage_stats.is_usage_stats_enabled:1 of
 msgid "Return whether usage statistics are currently enabled."
 msgstr ""
+
+#~ msgid "Kaiwu-Pytorch-Plugin public API."
+#~ msgstr ""
+
+#~ msgid "Kaiwu PyTorch plugin public API."
+#~ msgstr ""
+
+#~ msgid "shape is [num_nodes, num_nodes]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "device (torch.device, optional): Device for"
+#~ " tensor construction. If ``None``, uses "
+#~ "CPU."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Energy-guided discrete diffusion wrapper "
+#~ "over generic sequence backbones."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "noisy_tokens: Noisy token tensor used as"
+#~ " conditioning input. candidate_tokens: Candidate"
+#~ " clean token tensor to score. "
+#~ "attention_mask: Optional attention mask for"
+#~ " the energy model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "noisy_tokens: Current noisy token tensor. "
+#~ "**kwargs: Additional keyword arguments "
+#~ "forwarded to the proposal"
+#~ msgstr ""
+
+#~ msgid "model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "output_tokens: Token tensor to inspect. "
+#~ "partial_masks: Optional boolean mask of "
+#~ "positions that should remain"
+#~ msgstr ""
+
+#~ msgid "fixed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*args: Positional arguments forwarded to "
+#~ "``nn.Module.to``. **kwargs: Keyword arguments "
+#~ "forwarded to ``nn.Module.to``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "use_coupled_sampling: Whether to use the "
+#~ "coupled corruption variant. num_candidates: "
+#~ "Number of proposal candidates sampled at"
+#~ " each decode step. proposal_temperature: "
+#~ "Temperature used for proposal-side "
+#~ "sampling. proposal_noise_scale: Gumbel noise "
+#~ "scale used during proposal sampling. "
+#~ "energy_temperature: Temperature used when "
+#~ "converting energies into"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "disable_resample: Whether to disable "
+#~ "repetition-collapse resampling. resample_ratio: "
+#~ "Frequency threshold that triggers resampling."
+#~ " resample_top_p: Top-p cutoff used during"
+#~ " resampling. decoding_strategy: Skeptical-"
+#~ "remasking strategy string."
+#~ msgstr ""
+
+#~ msgid "Quantum Variational Autoencoder (QVAE) Model"
+#~ msgstr ""
+
+#~ msgid "encoder: Encoder module"
+#~ msgstr ""
+
+#~ msgid "decoder: Decoder module"
+#~ msgstr ""
+
+#~ msgid "bm (AbstractBoltzmannMachine): Boltzmann machine"
+#~ msgstr ""
+
+#~ msgid "sampler: Sampler"
+#~ msgstr ""
+
+#~ msgid "dist_beta: Beta parameter for the distribution"
+#~ msgstr ""
+
+#~ msgid "mean_x (torch.Tensor): Bias of training data"
+#~ msgstr ""
+
+#~ msgid "num_vis (int): Number of visible variables in the Boltzmann machine"
+#~ msgstr ""
+
+#~ msgid "Forward propagation"
+#~ msgstr ""
+
+#~ msgid "x (torch.Tensor): Input data"
+#~ msgstr ""
+
+#~ msgid "tuple: (recon_x, posterior, q, zeta)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "recon_x: Reconstructed data posterior: "
+#~ "Posterior distribution object q: Encoder "
+#~ "output zeta: Posterior sample"
+#~ msgstr ""
+
+#~ msgid "Compute negative ELBO loss"
+#~ msgstr ""
+
+#~ msgid "kl_beta (float): Weight coefficient for KL term"
+#~ msgstr ""
+
+#~ msgid "tuple: (output, recon_x, neg_elbo, wd_loss, total_kl, cost, q, zeta)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "output: Reconstructed output (sigmoid "
+#~ "activated) recon_x: Reconstructed data "
+#~ "neg_elbo: Negative ELBO loss wd_loss: "
+#~ "Weight decay loss total_kl: KL "
+#~ "divergence cost: Reconstruction loss q: "
+#~ "Encoder output zeta: Posterior sample"
+#~ msgstr ""
+
+#~ msgid "Compute posterior distribution and its reparameterized sample"
+#~ msgstr ""
+
+#~ msgid "q_logits (torch.Tensor): Encoder output, log-odds"
+#~ msgstr ""
+
+#~ msgid "beta: Beta parameter for the distribution"
+#~ msgstr ""
+
+#~ msgid "tuple: (Posterior distribution object, Sampled result zeta)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It exposes both training-oriented APIs"
+#~ " such as :meth:`objective` and decoding-"
+#~ "oriented APIs such as "
+#~ ":meth:`initialize_state`, :meth:`step`, and "
+#~ ":meth:`generate`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "dict[str, Any]: A mutable state "
+#~ "dictionary suitable for repeated :meth:`step`"
+#~ " calls."
+#~ msgstr ""
+
+#~ msgid "Semantic alias around :meth:`forward` for proposal-side calls."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "state: Current decode state created by"
+#~ " :meth:`initialize_state`. partial_masks: Optional "
+#~ "boolean mask of fixed positions."
+#~ msgstr ""
+
+#~ msgid "quadratic_coef (torch.FloatTensor, optional): Quadratic coefficient"
+#~ msgstr ""
+
+#~ msgid "with shape ``[num_nodes, num_nodes]``."
+#~ msgstr ""
+
+#~ msgid "device (torch.device, optional): Device for tensor construction; uses"
+#~ msgstr ""
+
+#~ msgid "CPU when ``None``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Energy-guided discrete diffusion wrapper "
+#~ "over generic sequence backbones. Initializes"
+#~ " a QDiffusion model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It exposes both training-oriented APIs"
+#~ " such as ``objective`` and decoding-"
+#~ "oriented APIs such as ``initialize_state``,"
+#~ " ``step``, and ``generate``."
+#~ msgstr ""
+
+#~ msgid "proposal_model: Backbone used to predict proposal logits."
+#~ msgstr ""
+
+#~ msgid "energy_model: Energy-side model used to encode and score candidates."
+#~ msgstr ""
+
+#~ msgid "token_spec: Special-token metadata required by the generator."
+#~ msgstr ""
+
+#~ msgid "config: Optional generation/training configuration."
+#~ msgstr ""
+
+#~ msgid "dtype: Floating point dtype tracked by the wrapper."
+#~ msgstr ""
+
+#~ msgid "device: Optional target device. When omitted, infer from parameters."
+#~ msgstr ""
+
+#~ msgid "freeze_proposal: Whether to freeze proposal model parameters."
+#~ msgstr ""
+
+#~ msgid "noisy_tokens: Noisy token tensor used as conditioning input."
+#~ msgstr ""
+
+#~ msgid "candidate_tokens: Candidate clean token tensor to score."
+#~ msgstr ""
+
+#~ msgid "attention_mask: Optional attention mask for the energy model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "noisy_tokens: Current noisy token tensor. "
+#~ "``**kwargs``: Additional keyword arguments "
+#~ "forwarded to the proposal model."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "output_tokens: Token tensor to inspect. "
+#~ "partial_masks: Optional boolean mask of "
+#~ "positions that should remain fixed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "dict[str, Any]: A mutable state "
+#~ "dictionary suitable for repeated ``step`` "
+#~ "calls."
+#~ msgstr ""
+
+#~ msgid "Semantic alias around ``forward`` for proposal-side calls."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "state: Current decode state created by"
+#~ " ``initialize_state``. partial_masks: Optional "
+#~ "boolean mask of fixed positions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``*args``: Positional arguments forwarded to"
+#~ " ``nn.Module.to``. ``**kwargs``: Keyword "
+#~ "arguments forwarded to ``nn.Module.to``."
+#~ msgstr ""
+
+#~ msgid "use_coupled_sampling: Whether to use the coupled corruption variant."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "num_candidates: Number of proposal candidates"
+#~ " sampled at each decode step."
+#~ msgstr ""
+
+#~ msgid "proposal_temperature: Temperature used for proposal-side sampling."
+#~ msgstr ""
+
+#~ msgid "proposal_noise_scale: Gumbel noise scale used during proposal sampling."
+#~ msgstr ""
+
+#~ msgid "energy_temperature: Temperature used when converting energies into"
+#~ msgstr ""
+
+#~ msgid "disable_resample: Whether to disable repetition-collapse resampling."
+#~ msgstr ""
+
+#~ msgid "resample_ratio: Frequency threshold that triggers resampling."
+#~ msgstr ""
+
+#~ msgid "resample_top_p: Top-p cutoff used during resampling."
+#~ msgstr ""
+
+#~ msgid "decoding_strategy: Skeptical-remasking strategy string."
+#~ msgstr ""
+
+#~ msgid "基类：:py:class:`~kaiwu.torch_plugin.qvae.AutoEncoderBase`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Quantum Variational Autoencoder integrated "
+#~ "into AutoEncoderBase framework."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "input_dimension (int or list of int):"
+#~ " Dimensionality of input features. "
+#~ "activation_fct (callable, optional): Activation "
+#~ "function for hidden layers. config "
+#~ "(object): Configuration object containing "
+#~ "``num_latent_units``, ``loss_type``, ``dist_beta``, "
+#~ "``kl_beta``, and ``weight_decay``. sampler_type "
+#~ "(str): Type of sampler for BM "
+#~ "('sa' or 'cim'). n_batches (int): Number"
+#~ " of batches for conditional decoding "
+#~ "(0 = no conditioning). bm (object, "
+#~ "optional): Pre-created Boltzmann Machine. "
+#~ "encoder (object, optional): Pre-created "
+#~ "encoder. decoder (object, optional): Pre-"
+#~ "created decoder. sampler (object, optional):"
+#~ " Pre-created sampler. ``**kwargs``: "
+#~ "Additional keyword arguments for "
+#~ "AutoEncoderBase."
+#~ msgstr ""
+
+#~ msgid "Compute BM loss for updating BM parameters separately."
+#~ msgstr ""
+
+#~ msgid "q (torch.Tensor): Encoder output logits (batch_size, latent_dim)."
+#~ msgstr ""
+
+#~ msgid "Must be detached to prevent gradients flowing to encoder."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "bm_weight_decay (float, optional): L2 "
+#~ "regularization coefficient for BM parameters."
+#~ msgstr ""
+
+#~ msgid "torch.Tensor: BM loss scalar."
+#~ msgstr ""
+
+#~ msgid "Create encoder, decoder, BM and sampler. Subclasses must override."
+#~ msgstr ""
+
+#~ msgid "计算 BM 能量（用于评估）"
+#~ msgstr ""
+
+#~ msgid "Forward pass through the QVAE."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "x (torch.Tensor): Input tensor of shape"
+#~ " (batch_size, input_dim). batch_idx "
+#~ "(torch.Tensor, optional): Batch indices for"
+#~ " conditional decoding when ``n_batches >"
+#~ " 0``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "tuple: Reconstructed logits, posterior "
+#~ "distribution, encoder logits, and "
+#~ "reparameterized latent sample."
+#~ msgstr ""
+
+#~ msgid "Compute total loss (reconstruction + KL + weight decay)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "x (torch.Tensor): Input tensor (batch_size,"
+#~ " input_dim). recon_x (torch.Tensor): "
+#~ "Reconstructed logits (batch_size, input_dim). "
+#~ "posterior (MixtureGeneric): Posterior distribution"
+#~ " object. q (torch.Tensor): Encoder logits"
+#~ " (batch_size, latent_dim). zeta (torch.Tensor):"
+#~ " Latent sample (batch_size, latent_dim)."
+#~ msgstr ""
+
+#~ msgid "torch.Tensor: Total loss scalar."
+#~ msgstr ""
+
+#~ msgid "ValueError: If loss_type is not supported."
+#~ msgstr ""
+
+#~ msgid "Compute posterior distribution and reparameterized sample."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "q_logits (torch.Tensor): Encoder output logits"
+#~ " (batch_size, latent_dim). beta (float): "
+#~ "Mixture parameter for MixtureGeneric."
+#~ msgstr ""
+
+#~ msgid "tuple: Posterior distribution and reparameterized latent sample."
+#~ msgstr ""
+
+#~ msgid "Compute train bias from dataset mean for Bernoulli reconstruction."
+#~ msgstr ""
 

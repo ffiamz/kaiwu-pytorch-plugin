@@ -142,7 +142,7 @@ msgid ""
 "Objective: Low Energy for Real Data](kpp-theoretical-foundations-ebms-"
 "def.md) that the gradient of the negative log-likelihood decomposes into "
 "a data term and a model term:"
-msgstr "没有 $Z_\\theta$，我们只有未归一化分数。这意味着无法直接计算测试数据似然，模型比较和超参数调优都会变得困难。"
+msgstr "**通过梯度下降学习**：如 [3.1 定义目标：让真实数据具有低能量](kpp-theoretical-foundations-ebms-def.md) 所述，负对数似然的梯度可分解为数据项和模型项："
 
 #: ../../source/theoretical-foundations-ebms-partition.md:42
 msgid ""
@@ -168,9 +168,7 @@ msgid ""
 "numerator and the denominator involve the partition function $Z_\\theta$,"
 " making exact gradient evaluation computationally intractable for any "
 "non-trivial model."
-msgstr ""
-"如 [3.1 定义目标：让真实数据具有低能量](kpp-theoretical-foundations-ebms-def.md) "
-"所述，负对数似然梯度可分解为数据项和模型项："
+msgstr "第一项可从训练集直接估计。第二项，即模型分布 $P_\\theta$ 下的期望，是困难的来源。如上式所示，精确计算该期望需要对所有 $2^N$ 个可能构型按玻尔兹曼因子加权求和。分子和分母都涉及配分函数 $Z_\\theta$，因此对任何非平凡模型，精确梯度计算在计算上都不可处理。"
 
 #: ../../source/theoretical-foundations-ebms-partition.md:48
 msgid ""

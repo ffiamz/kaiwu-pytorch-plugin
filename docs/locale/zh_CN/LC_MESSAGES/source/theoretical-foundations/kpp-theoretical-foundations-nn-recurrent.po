@@ -477,7 +477,7 @@ msgid ""
 "canonical ensemble (see Section [1.2 The Boltzmann Distribution and "
 "Equilibrium](kpp-theoretical-foundations-stat-boltzmann.md)) rather than "
 "simply descending into the nearest deterministic fixed point."
-msgstr "二者联系非常深刻：Hopfield 网络定义 **能量景观**，而玻尔兹曼机定义该景观上的 **概率分布**。两者由玻尔兹曼分布紧密连接："
+msgstr "实际上，玻尔兹曼机使系统能够从正则系综中采样（见 [1.2 玻尔兹曼分布与平衡](kpp-theoretical-foundations-stat-boltzmann.md)），而不只是下降到最近的确定性不动点。"
 
 #: ../../source/theoretical-foundations-nn-recurrent.md:113
 msgid ""
@@ -497,9 +497,7 @@ msgid ""
 "As $T \\to 0$, the Boltzmann machine reduces to the deterministic "
 "Hopfield network. At finite temperatures, it becomes a flexible, "
 "probabilistic model of data."
-msgstr ""
-"换言之，玻尔兹曼机允许系统从正则系综中采样（见 [1.2 玻尔兹曼分布与平衡](kpp-theoretical-foundations-stat-"
-"boltzmann)），而不只是下降到最近的确定性不动点。"
+msgstr "当 $T \\to 0$ 时，玻尔兹曼机退化为确定性的 Hopfield 网络。在有限温度下，它成为灵活的数据概率模型。"
 
 #: ../../source/theoretical-foundations-nn-recurrent.md:119
 msgid "Summary"

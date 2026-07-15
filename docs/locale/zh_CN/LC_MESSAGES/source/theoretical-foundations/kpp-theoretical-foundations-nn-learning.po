@@ -258,9 +258,7 @@ msgid ""
 "Section [3.1 Defining the Objective: Low Energy for Real Data](kpp-"
 "theoretical-foundations-ebms-def.md) the gradient of the log-likelihood "
 "for a Boltzmann machine:"
-msgstr ""
-"我们也可以考察单个权重更新如何改变能量景观。假设把 $w_{ij}$ 增加一个小量 $\\Delta w$。任意状态 $\\mathbf{x}$ "
-"的能量变化为："
+msgstr "Hebb 假说具有生物学动机，而玻尔兹曼机为其提供了严格的数学依据。回顾 [3.1 定义目标：让真实数据具有低能量](kpp-theoretical-foundations-ebms-def.md)，玻尔兹曼机对数似然的梯度为："
 
 #: ../../source/theoretical-foundations-nn-learning.md:71
 msgid ""

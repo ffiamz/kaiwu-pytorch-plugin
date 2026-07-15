@@ -404,7 +404,7 @@ msgid ""
 "-\\mathcal{L}(\\theta)$ to keep the gradient sign consistent with the "
 "contrastive divergence algorithm introduced in Section [3.3 Contrastive "
 "Divergence](kpp-theoretical-foundations-ebms-cd.md)."
-msgstr "**未归一化的灵活性**：设计能量函数时无需担心归一化。构型上的任意可微函数都可以作为能量，因此可融入领域知识、约束与结构化架构。"
+msgstr "**记号说明**：许多教材最小化负对数似然 $\\mathcal{L}(\\theta)$。这里最大化 $f(\\theta) = -\\mathcal{L}(\\theta)$，以使梯度符号与 [3.3 对比散度](kpp-theoretical-foundations-ebms-cd.md) 中介绍的算法保持一致。"
 
 #: ../../source/theoretical-foundations-ebms-def.md:107
 msgid "Why Low Energy for Real Data?"

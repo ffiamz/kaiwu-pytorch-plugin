@@ -224,10 +224,7 @@ msgid ""
 "Consequently, repeated application drives the network toward equilibrium,"
 " where configurations are sampled according to $P(\\mathbf{v}, "
 "\\mathbf{h})$."
-msgstr ""
-"学习目标是调整权重和偏置，使可见单元上的边缘分布 $P(\\mathbf{v})$ 近似训练数据的经验分布。根据 [3.1 "
-"定义目标：让真实数据具有低能量](kpp-theoretical-foundations-ebms-def.md) 推导，单个训练样本 "
-"$\\mathbf{v}$ 关于权重 $w_{ij}$ 的负对数似然梯度为："
+msgstr "反复应用该更新会将网络推向平衡，此时构型按照 $P(\\mathbf{v}, \\mathbf{h})$ 采样。"
 
 #: ../../source/theoretical-foundations-bm-overall.md:60
 msgid "Learning Objective: Maximum Likelihood with Hidden Variables"
