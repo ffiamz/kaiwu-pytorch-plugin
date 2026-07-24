@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-07-15 17:32+0800\n"
+"POT-Creation-Date: 2026-07-24 18:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,16 +101,6 @@ msgid ""
 "Spins sampled from the model     (shape determined by ``sampler`` and "
 "``sample_params``)."
 msgstr "从模型中采样的自旋（形状由 ``sampler`` 和 ``sample_params`` 决定）。"
-
-#: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.condition_sample:9
-#: of
-msgid "Spins sampled from the model"
-msgstr "从模型中采样的自旋。"
-
-#: kaiwu.torch_plugin.full_boltzmann_machine.BoltzmannMachine.condition_sample:10
-#: of
-msgid "(shape determined by ``sampler`` and ``sample_params``)."
-msgstr "（形状由 ``sampler`` 和 ``sample_params`` 决定）。"
 
 #: ../../source/modules/kaiwu.torch_plugin.md
 msgid "返回类型"
@@ -513,38 +503,34 @@ msgid "Activation function for hidden layers."
 msgstr "隐藏层的激活函数。"
 
 #: kaiwu.torch_plugin.qvae.QVAE:7 of
+#, 
 msgid ""
-"Configuration object containing ``num_latent_units``, ``loss_type``, "
-"``dist_beta``, ``kl_beta``, and ``weight_decay``."
-msgstr "包含 ``num_latent_units``、``loss_type``、``dist_beta``、``kl_beta`` 和 ``weight_decay`` 的配置对象。"
-
-#: kaiwu.torch_plugin.qvae.QVAE:9 of
-msgid "Type of sampler for BM ('sa' or 'cim')."
-msgstr "BM 的采样器类型（``sa`` 或 ``cim``）。"
+"Configuration with ``num_latent_units`` (int), ``loss_type`` "
+"(``'bernoulli'`` or ``'mse'``), ``dist_beta`` (float), ``kl_beta`` "
+"(float), and ``weight_decay`` (float)."
+msgstr "包含 ``num_latent_units``（int）、``loss_type``（``'bernoulli'`` 或 ``'mse'``）、``dist_beta``（float）、``kl_beta``（float）和 ``weight_decay``（float）的配置对象。"
 
 #: kaiwu.torch_plugin.qvae.QVAE:11 of
-msgid "Number of batches for conditional decoding (0 = no conditioning)."
-msgstr "条件解码的批次数（0 表示不使用条件）。"
+msgid "Pre-created encoder. Created by the subclass factory when omitted."
+msgstr "预先创建的编码器。未提供时由子类工厂创建。"
 
-#: kaiwu.torch_plugin.qvae.QVAE:13 of
-msgid "Pre-created Boltzmann Machine."
-msgstr "预先创建的玻尔兹曼机。"
-
-#: kaiwu.torch_plugin.qvae.QVAE:15 of
-msgid "Pre-created encoder."
-msgstr "预先创建的编码器。"
+#: kaiwu.torch_plugin.qvae.QVAE:14 of
+msgid "Pre-created decoder. Created by the subclass factory when omitted."
+msgstr "预先创建的解码器。未提供时由子类工厂创建。"
 
 #: kaiwu.torch_plugin.qvae.QVAE:17 of
-msgid "Pre-created decoder."
-msgstr "预先创建的解码器。"
+msgid ""
+"Pre-created Boltzmann machine. Created by the subclass factory when "
+"omitted."
+msgstr "预先创建的玻尔兹曼机。未提供时由子类工厂创建。"
 
-#: kaiwu.torch_plugin.qvae.QVAE:19 of
-msgid "Pre-created sampler."
-msgstr "预先创建的采样器。"
+#: kaiwu.torch_plugin.qvae.QVAE:20 of
+msgid "Pre-created sampler. Created by the subclass factory when omitted."
+msgstr "预先创建的采样器。未提供时由子类工厂创建。"
 
-#: kaiwu.torch_plugin.qvae.QVAE:21 of
-msgid "Additional keyword arguments for AutoEncoderBase."
-msgstr "传递给 AutoEncoderBase 的附加关键字参数。"
+#: kaiwu.torch_plugin.qvae.QVAE:23 of
+msgid "Type of sampler for BM ('sa' or 'cim')."
+msgstr "BM 的采样器类型（``sa`` 或 ``cim``）。"
 
 #: kaiwu.torch_plugin.qvae.QVAE.bm_loss:1 of
 msgid "Compute BM loss for updating BM parameters separately."
@@ -565,12 +551,26 @@ msgid "BM loss scalar."
 msgstr "BM 损失标量。"
 
 #: kaiwu.torch_plugin.qvae.QVAE.create_networks:1 of
-msgid "Create encoder, decoder, BM and sampler. Subclasses must override."
-msgstr "创建编码器、解码器、BM 和采样器；子类必须重写此方法。"
+msgid "Create components that were not supplied to the constructor."
+msgstr "创建未提供给构造函数的组件。"
 
 #: kaiwu.torch_plugin.qvae.QVAE.energy:1 of
-msgid "计算 BM 能量（用于评估）"
-msgstr "计算 BM 能量（用于评估）。"
+msgid "Compute the Boltzmann-machine energy for each input sample."
+msgstr "计算每个输入样本的玻尔兹曼机能量。"
+
+#: kaiwu.torch_plugin.qvae.QVAE.energy:3 of
+msgid "Input samples with the input feature dimension."
+msgstr "具有输入特征维度的输入样本。"
+
+#: kaiwu.torch_plugin.qvae.QVAE.energy:5 of
+msgid ""
+"Loss type to validate against the model configuration. Defaults to the "
+"configured loss type."
+msgstr "用于与模型配置进行校验的损失类型。默认使用配置的损失类型。"
+
+#: kaiwu.torch_plugin.qvae.QVAE.energy:9 of
+msgid "One energy value per input sample."
+msgstr "每个输入样本对应一个能量值。"
 
 #: kaiwu.torch_plugin.qvae.QVAE.forward:1 of
 msgid "Forward pass through the QVAE."
@@ -580,13 +580,9 @@ msgstr "执行 QVAE 的前向传播。"
 msgid "Input tensor of shape (batch_size, input_dim)."
 msgstr "形状为 (batch_size, input_dim) 的输入张量。"
 
-#: kaiwu.torch_plugin.qvae.QVAE.forward:5 of
-msgid "Batch indices for conditional decoding when ``n_batches > 0``."
-msgstr "当 ``n_batches > 0`` 时用于条件解码的批次索引。"
-
-#: kaiwu.torch_plugin.qvae.QVAE.forward:8 of
+#: kaiwu.torch_plugin.qvae.QVAE.forward:6 of
 msgid ""
-"Reconstructed logits, posterior distribution, encoder logits, and "
+"Reconstructed logits, posterior distribution, encoder logits,     and "
 "reparameterized latent sample."
 msgstr "重建 logits、后验分布、编码器 logits 和重参数化的潜变量样本。"
 
@@ -827,18 +823,6 @@ msgid ""
 " reconstruction error for each sample."
 msgstr "包含以下内容的元组：重建后的可见层数据，以及每个样本的重建误差。"
 
-#: kaiwu.torch_plugin.dbn.UnsupervisedDBN.reconstruct_with_rbm:13 of
-msgid "A tuple containing:"
-msgstr "包含以下内容的元组："
-
-#: kaiwu.torch_plugin.dbn.UnsupervisedDBN.reconstruct_with_rbm:14 of
-msgid "The reconstructed visible layer data."
-msgstr "重建后的可见层数据。"
-
-#: kaiwu.torch_plugin.dbn.UnsupervisedDBN.reconstruct_with_rbm:15 of
-msgid "The reconstruction error for each sample."
-msgstr "每个样本的重建误差。"
-
 #: kaiwu.torch_plugin.dbn.UnsupervisedDBN.transform:1 of
 msgid "An sklearn-compatible transform method."
 msgstr "兼容 sklearn 的 transform 方法。"
@@ -859,361 +843,3 @@ msgstr "启用 kpp 使用情况统计（默认启用，通常无需调用）。"
 msgid "Return whether usage statistics are currently enabled."
 msgstr "返回当前是否已启用使用情况统计。"
 
-#~ msgid ""
-#~ "noisy_tokens: Noisy token tensor used as"
-#~ " conditioning input. candidate_tokens: Candidate"
-#~ " clean token tensor to score. "
-#~ "attention_mask: Optional attention mask for"
-#~ " the energy model."
-#~ msgstr ""
-
-#~ msgid "model."
-#~ msgstr ""
-
-#~ msgid "fixed."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "use_coupled_sampling: Whether to use the "
-#~ "coupled corruption variant. num_candidates: "
-#~ "Number of proposal candidates sampled at"
-#~ " each decode step. proposal_temperature: "
-#~ "Temperature used for proposal-side "
-#~ "sampling. proposal_noise_scale: Gumbel noise "
-#~ "scale used during proposal sampling. "
-#~ "energy_temperature: Temperature used when "
-#~ "converting energies into"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "disable_resample: Whether to disable "
-#~ "repetition-collapse resampling. resample_ratio: "
-#~ "Frequency threshold that triggers resampling."
-#~ " resample_top_p: Top-p cutoff used during"
-#~ " resampling. decoding_strategy: Skeptical-"
-#~ "remasking strategy string."
-#~ msgstr ""
-
-#~ msgid "encoder: Encoder module"
-#~ msgstr ""
-
-#~ msgid "decoder: Decoder module"
-#~ msgstr ""
-
-#~ msgid "bm (AbstractBoltzmannMachine): Boltzmann machine"
-#~ msgstr "rbm (RestrictedBoltzmannMachine): 已训练的 RBM 模型。"
-
-#~ msgid "sampler: Sampler"
-#~ msgstr ""
-
-#~ msgid "dist_beta: Beta parameter for the distribution"
-#~ msgstr ""
-
-#~ msgid "mean_x (torch.Tensor): Bias of training data"
-#~ msgstr ""
-
-#~ msgid "num_vis (int): Number of visible variables in the Boltzmann machine"
-#~ msgstr "num_visible (int): 模型中的可见节点数。"
-
-#~ msgid "Forward propagation"
-#~ msgstr ""
-
-#~ msgid "x (torch.Tensor): Input data"
-#~ msgstr ""
-
-#~ msgid "tuple: (recon_x, posterior, q, zeta)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "recon_x: Reconstructed data posterior: "
-#~ "Posterior distribution object q: Encoder "
-#~ "output zeta: Posterior sample"
-#~ msgstr "tuple: 重建 logits、后验分布、编码器 logits 和重参数化的潜变量样本。"
-
-#~ msgid "Compute negative ELBO loss"
-#~ msgstr ""
-
-#~ msgid "kl_beta (float): Weight coefficient for KL term"
-#~ msgstr ""
-
-#~ msgid "tuple: (output, recon_x, neg_elbo, wd_loss, total_kl, cost, q, zeta)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "output: Reconstructed output (sigmoid "
-#~ "activated) recon_x: Reconstructed data "
-#~ "neg_elbo: Negative ELBO loss wd_loss: "
-#~ "Weight decay loss total_kl: KL "
-#~ "divergence cost: Reconstruction loss q: "
-#~ "Encoder output zeta: Posterior sample"
-#~ msgstr ""
-
-#~ msgid "beta: Beta parameter for the distribution"
-#~ msgstr ""
-
-#~ msgid "tuple: (Posterior distribution object, Sampled result zeta)"
-#~ msgstr "tuple: 后验分布和重参数化的潜变量样本。"
-
-#~ msgid "quadratic_coef (torch.FloatTensor, optional): Quadratic coefficient"
-#~ msgstr "quadratic_coef (torch.FloatTensor, optional): 二次项系数"
-
-#~ msgid "CPU when ``None``."
-#~ msgstr "当 ``None`` 时使用 CPU。"
-
-#~ msgid "proposal_model: Backbone used to predict proposal logits."
-#~ msgstr ""
-
-#~ msgid "energy_model: Energy-side model used to encode and score candidates."
-#~ msgstr ""
-
-#~ msgid "token_spec: Special-token metadata required by the generator."
-#~ msgstr ""
-
-#~ msgid "config: Optional generation/training configuration."
-#~ msgstr ""
-
-#~ msgid "dtype: Floating point dtype tracked by the wrapper."
-#~ msgstr ""
-
-#~ msgid "device: Optional target device. When omitted, infer from parameters."
-#~ msgstr ""
-
-#~ msgid "freeze_proposal: Whether to freeze proposal model parameters."
-#~ msgstr ""
-
-#~ msgid "noisy_tokens: Noisy token tensor used as conditioning input."
-#~ msgstr ""
-
-#~ msgid "candidate_tokens: Candidate clean token tensor to score."
-#~ msgstr ""
-
-#~ msgid "attention_mask: Optional attention mask for the energy model."
-#~ msgstr ""
-
-#~ msgid "use_coupled_sampling: Whether to use the coupled corruption variant."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "num_candidates: Number of proposal candidates"
-#~ " sampled at each decode step."
-#~ msgstr ""
-
-#~ msgid "proposal_temperature: Temperature used for proposal-side sampling."
-#~ msgstr ""
-
-#~ msgid "proposal_noise_scale: Gumbel noise scale used during proposal sampling."
-#~ msgstr ""
-
-#~ msgid "energy_temperature: Temperature used when converting energies into"
-#~ msgstr ""
-
-#~ msgid "disable_resample: Whether to disable repetition-collapse resampling."
-#~ msgstr ""
-
-#~ msgid "resample_ratio: Frequency threshold that triggers resampling."
-#~ msgstr ""
-
-#~ msgid "resample_top_p: Top-p cutoff used during resampling."
-#~ msgstr ""
-
-#~ msgid "decoding_strategy: Skeptical-remasking strategy string."
-#~ msgstr ""
-
-#~ msgid "基类：:py:class:`~kaiwu.torch_plugin.qvae.AutoEncoderBase`"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "input_dimension (int or list of int):"
-#~ " Dimensionality of input features. "
-#~ "activation_fct (callable, optional): Activation "
-#~ "function for hidden layers. config "
-#~ "(object): Configuration object containing "
-#~ "``num_latent_units``, ``loss_type``, ``dist_beta``, "
-#~ "``kl_beta``, and ``weight_decay``. sampler_type "
-#~ "(str): Type of sampler for BM "
-#~ "('sa' or 'cim'). n_batches (int): Number"
-#~ " of batches for conditional decoding "
-#~ "(0 = no conditioning). bm (object, "
-#~ "optional): Pre-created Boltzmann Machine. "
-#~ "encoder (object, optional): Pre-created "
-#~ "encoder. decoder (object, optional): Pre-"
-#~ "created decoder. sampler (object, optional):"
-#~ " Pre-created sampler. ``**kwargs``: "
-#~ "Additional keyword arguments for "
-#~ "AutoEncoderBase."
-#~ msgstr ""
-
-#~ msgid "Compute BM loss for updating BM parameters separately."
-#~ msgstr ""
-
-#~ msgid "Must be detached to prevent gradients flowing to encoder."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "bm_weight_decay (float, optional): L2 "
-#~ "regularization coefficient for BM parameters."
-#~ msgstr ""
-
-#~ msgid "torch.Tensor: BM loss scalar."
-#~ msgstr "torch.Tensor: BM 损失标量。"
-
-#~ msgid "Create encoder, decoder, BM and sampler. Subclasses must override."
-#~ msgstr ""
-
-#~ msgid "计算 BM 能量（用于评估）"
-#~ msgstr ""
-
-#~ msgid "Forward pass through the QVAE."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "x (torch.Tensor): Input tensor of shape"
-#~ " (batch_size, input_dim). batch_idx "
-#~ "(torch.Tensor, optional): Batch indices for"
-#~ " conditional decoding when ``n_batches >"
-#~ " 0``."
-#~ msgstr ""
-
-#~ msgid "Compute total loss (reconstruction + KL + weight decay)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "x (torch.Tensor): Input tensor (batch_size,"
-#~ " input_dim). recon_x (torch.Tensor): "
-#~ "Reconstructed logits (batch_size, input_dim). "
-#~ "posterior (MixtureGeneric): Posterior distribution"
-#~ " object. q (torch.Tensor): Encoder logits"
-#~ " (batch_size, latent_dim). zeta (torch.Tensor):"
-#~ " Latent sample (batch_size, latent_dim)."
-#~ msgstr ""
-
-#~ msgid "torch.Tensor: Total loss scalar."
-#~ msgstr "torch.Tensor: 总损失标量。"
-
-#~ msgid "ValueError: If loss_type is not supported."
-#~ msgstr "ValueError: 当不支持 loss_type 时抛出。"
-
-#~ msgid ""
-#~ "q_logits (torch.Tensor): Encoder output logits"
-#~ " (batch_size, latent_dim). beta (float): "
-#~ "Mixture parameter for MixtureGeneric."
-#~ msgstr ""
-
-#~ msgid "Compute train bias from dataset mean for Bernoulli reconstruction."
-#~ msgstr ""
-
-#~ msgid "Args:"
-#~ msgstr "Args:"
-
-#~ msgid "device (torch.device, optional): Device for tensor construction; uses"
-#~ msgstr "device (torch.device, optional): 用于构造张量的设备；当 ``None`` 时使用"
-
-#~ msgid ""
-#~ "h_range (tuple[float, float]): Range for "
-#~ "quadratic weights. for example, [-1, 1]"
-#~ " j_range (tuple[float, float]): Range for"
-#~ " linear weights. for example, [-1, 1]"
-#~ msgstr ""
-#~ "h_range (tuple[float, float]): 二次项权重范围，例如 [-1,"
-#~ " 1]。j_range (tuple[float, float]): 线性权重范围，例如 "
-#~ "[-1, 1]。"
-
-#~ msgid ""
-#~ "sampler (kaiwu.core.Optimizer): Optimizer used "
-#~ "for sampling from the model. s_visible:"
-#~ " State of the visible layer."
-#~ msgstr "sampler (kaiwu.core.Optimizer): 用于采样的优化器。s_visible: 可见层状态。"
-
-#~ msgid "Returns:"
-#~ msgstr "Returns:"
-
-#~ msgid "s_all (torch.tensor): Tensor of shape (B, N), where B is batch size,"
-#~ msgstr "s_all (torch.tensor): 形状为 (B, N) 的张量，其中 B 为批次大小，"
-
-#~ msgid "N is the number of variables in the model."
-#~ msgstr "N 为模型中的变量数。"
-
-#~ msgid "s_visible (torch.Tensor, optional): State of the visible layer,"
-#~ msgstr "s_visible (torch.Tensor, optional): 可见层状态，"
-
-#~ msgid "num_sample (int, optional): Number of samples."
-#~ msgstr "num_sample (int, optional): 样本数。"
-
-#~ msgid "Raises:"
-#~ msgstr "Raises:"
-
-#~ msgid ""
-#~ "input_tokens: Initial token tensor. max_steps:"
-#~ " Number of decode iterations to run."
-#~ " partial_masks: Optional boolean mask of"
-#~ " fixed positions. temperature: Sampling "
-#~ "temperature stored in the decode state."
-#~ " return_state: Whether to return the "
-#~ "full final state dictionary."
-#~ msgstr ""
-#~ "input_tokens: 初始 token 张量。max_steps: "
-#~ "解码迭代次数。partial_masks: 固定位置的可选布尔掩码。temperature: "
-#~ "解码状态中的采样温度。return_state: 是否返回完整最终状态字典。"
-
-#~ msgid ""
-#~ "input_tokens: Initial token tensor. "
-#~ "partial_masks: Optional boolean mask of "
-#~ "fixed positions. max_steps: Planned number "
-#~ "of decode iterations. temperature: Sampling"
-#~ " temperature stored in the state "
-#~ "payload."
-#~ msgstr ""
-#~ "input_tokens: 初始 token 张量。partial_masks: "
-#~ "固定位置的可选布尔掩码。max_steps: 计划的解码迭代次数。temperature: 状态载荷中的采样温度。"
-
-#~ msgid ""
-#~ "``*args``: Positional arguments forwarded to"
-#~ " ``nn.Module.to``. ``**kwargs``: Keyword "
-#~ "arguments forwarded to ``nn.Module.to``."
-#~ msgstr ""
-#~ "``*args``: 转发给 ``nn.Module.to`` 的位置参数。``**kwargs``:"
-#~ " 转发给 ``nn.Module.to`` 的关键字参数。"
-
-#~ msgid "Attributes:"
-#~ msgstr "Attributes:"
-
-#~ msgid "training objective."
-#~ msgstr "。"
-
-#~ msgid "reranking weights."
-#~ msgstr "重排序权重时使用的温度。"
-
-#~ msgid "quadratic_coef (torch.FloatTensor, optional): quadratic coefficent,"
-#~ msgstr "quadratic_coef (torch.FloatTensor, optional): 二次项系数，"
-
-#~ msgid ""
-#~ "linear_bias (torch.FloatTensor, optional): linear"
-#~ " bias, shape is [num_hidden]"
-#~ msgstr "linear_bias (torch.FloatTensor, optional): 线性偏置，形状为 [num_hidden]"
-
-#~ msgid ""
-#~ "s_all (torch.tensor): Tensor of shape "
-#~ "(B, N), where B is the batch "
-#~ "size,"
-#~ msgstr "s_all (torch.tensor): 形状为 (B, N) 的张量，其中 B 为批次大小，"
-
-#~ msgid "hidden_layers_structure (list, optional): A list of integers"
-#~ msgstr "hidden_layers_structure (list, optional): 整数列表，"
-
-#~ msgid "data_in (numpy.ndarray): The input data."
-#~ msgstr "data_in (numpy.ndarray): 输入数据。"
-
-#~ msgid "Defaults to 0."
-#~ msgstr "默认为 0。"
-
-#~ msgid "numpy.ndarray: The reconstructed data."
-#~ msgstr "numpy.ndarray: 重建后的数据。"
-
-#~ msgid "rbm (RestrictedBoltzmannMachine): The trained RBM model."
-#~ msgstr "rbm (RestrictedBoltzmannMachine): 已训练的 RBM 模型。"
-
-#~ msgid "device (torch.device, optional): The device to perform computation on."
-#~ msgstr "device (torch.device, optional): 执行计算所用的设备。"
-
-#~ msgid "tuple[numpy.ndarray, numpy.ndarray]: A tuple containing:"
-#~ msgstr "tuple[numpy.ndarray, numpy.ndarray]: 包含以下内容的元组："

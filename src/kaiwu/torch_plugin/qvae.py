@@ -102,12 +102,9 @@ class QVAE(AutoEncoderBase):
     Args:
         input_dimension (int or list of int): Dimensionality of input features.
         activation_fct (callable, optional): Activation function for hidden layers.
-        config (object): Configuration object containing:
-            - num_latent_units (int)
-            - loss_type (str): 'bernoulli' or 'mse'
-            - dist_beta (float)
-            - kl_beta (float)
-            - weight_decay (float)
+        config (object): Configuration with ``num_latent_units`` (int),
+            ``loss_type`` (``'bernoulli'`` or ``'mse'``), ``dist_beta``
+            (float), ``kl_beta`` (float), and ``weight_decay`` (float).
         encoder (nn.Module, optional): Pre-created encoder. Created by the
             subclass factory when omitted.
         decoder (nn.Module, optional): Pre-created decoder. Created by the
@@ -231,7 +228,7 @@ class QVAE(AutoEncoderBase):
 
         Returns:
             tuple: Reconstructed logits, posterior distribution, encoder logits,
-            and reparameterized latent sample.
+                and reparameterized latent sample.
         """
         x = x.view(-1, self._input_dimension)
 
